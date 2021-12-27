@@ -4,7 +4,7 @@ def f(x):
 
 a = 0
 b = 0.8
-h = (b-a)/2
+h = (b-a)/2  # or (x_2 - x_0) / 2
 exact_integral = 1.640533
 
 
