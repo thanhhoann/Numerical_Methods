@@ -31,6 +31,7 @@ def I_j_4(i_first, i_last):
 
 
 print("Segments\th\tIntegral")
+print("--------------------------------")
 h = b
 for i in range(0, 5):
     n = 2**i
