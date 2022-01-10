@@ -1,12 +1,12 @@
-x_from = 0
-x_to = 4
+_from = 0
+_to = 2
 h = 0.5
 x_0 = 0
 y_0 = 1
 
 
 def f(x, y):
-    return (-2)*x**3 + 12*x**2 - 20*x + 8.5
+    return y*x**3 - 1.5*y
 
 
 def F(x, y):
@@ -23,7 +23,7 @@ def range_helper(start, stop, step=1):  # range() doesn't allow float steps, thi
         return([])
 
 
-steps = (range_helper(x_from, x_to, h))
+steps = (range_helper(_from, _to, h))
 
 
 def Euler_Method():
