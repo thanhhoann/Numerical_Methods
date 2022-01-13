@@ -1,9 +1,14 @@
+from __future__ import division
+from math import exp, sin
+
+
 def f(x):
-    return 0.2 + 25*x - 200*x**2 + 675*x**3 - 900*x**4 + 400*x**5
+    return (exp(x)*sin(x))/(1+x**2)
+    #  return 0.2 + 25*x - 200*x**2 + 675*x**3 - 900*x**4 + 400*x**5
 
 
 a = 0
-b = 0.8
+b = 2
 
 
 def Trapezodial_integral(a, b, number_of_segments):
@@ -33,9 +38,9 @@ def I_j_4(i_first, i_last):
 print("Segments\th\tIntegral")
 print("--------------------------------")
 h = b
-for i in range(0, 5):
+for i in range(0, 3):  # adjust the range to keep the h constant
     n = 2**i
-    print("%4s\t%9s\t%8s" % (n, h, Trapezodial_integral(0, 0.8, n)))
+    print("%4s\t%9s\t%8s" % (n, h, Trapezodial_integral(a, b, n)))
     h /= 2
 
 print("\nLevel 1, k = 1, O(h^2)")

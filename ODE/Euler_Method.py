@@ -1,6 +1,6 @@
 _from = 0
 _to = 2
-h = 0.5
+h = 0.25
 x_0 = 0
 y_0 = 1
 
@@ -30,12 +30,14 @@ def Euler_Method():
     y_Euler_old = y_0
     y_true_old = y_0
 
-    print('x\ty_true\ty_Euler')
+    print('t\ty_true\ty_Euler\t\tf(t,y)')
     for i in range(0, steps.__len__()):
         y_true = F(steps[i], y_true_old)
         y_Euler = y_Euler_old + f(steps[i], y_Euler_old) * h
+        f_t_y = f(steps[i], y_Euler_old)
 
-        print('%s %10s %8s' % (steps[i], y_true, y_Euler_old))
+        print('%s %10s %10s %10s' %
+              (steps[i], round(y_true, 3), round(y_Euler_old, 4), round(f_t_y, 4)))
 
         y_Euler_old = y_Euler
         y_true_old = y_true
